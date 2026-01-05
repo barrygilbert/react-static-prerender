@@ -145,7 +145,7 @@ export async function prerender(config) {
           await fs.writeFile(path.join(outDirPath, fileName), html);
           console.log(`✅ Saved static page: ${fileName}`);
         } else {
-          const routeDir = path.join(outDirPath, safeName);
+          const routeDir = path.join(outDirPath, route);
           await fs.mkdir(routeDir, { recursive: true });
           await fs.writeFile(path.join(routeDir, "index.html"), html);
           console.log(
